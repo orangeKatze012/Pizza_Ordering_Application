@@ -42,9 +42,6 @@
     <p>Toppings: None</p>
     <h4>Total: $0.00</h4>
     <script>
-      document.querySelector('input[value="Small"]').addEventListener('change',function(){
-        document.getElementById('size').textContent = "Size: Small"
-      })
       const allRadioButtons = document.querySelecterAll('input[name="pizza-size"]')
       const sizeDisplayTag = document.getElementById('size');
       allRadioButtons.forEach(radio => {
