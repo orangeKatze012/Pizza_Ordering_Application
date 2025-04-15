@@ -38,14 +38,22 @@
       </label>
     </form>
     <h2>Your order details:</h2>
-    <p id="size">Size: None</p>
+    <p id="size">Size: Medium</p>
     <p>Toppings: None</p>
     <h4>Total: $0.00</h4>
     <script>
       document.querySelector('input[value="small"]').addEventListener('change',function(){
-        document.getElementById('size').textContent = "Size: small"
+        document.getElementById('size').textContent = "Size: Small"
       })
-      
+      document.querySelector('input[value="medium"]').addEventListener('change',function(){
+        document.getElementById('size').textContent = "Size: Medium"
+      })
+      document.querySelector('input[value="large"]').addEventListener('change',function(){
+        document.getElementById('size').textContent = "Size: Large"
+      })
+      document.querySelector('input[value="extra large"]').addEventListener('change',function(){
+        document.getElementById('size').textContent = "Size: Extra Large"
+      })
       function size(){
         
       }
