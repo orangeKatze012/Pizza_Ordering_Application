@@ -8,19 +8,19 @@
     <h3>Select a pizza size:</h3>
     <form>
       <label>
-        <input type="radio" name="pizza-size" value="small">Small</input>
+        <input type="radio" name="pizza-size" value="Small">Small</input>
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="medium" checked>Medium</input>
+        <input type="radio" name="pizza-size" value="Medium" checked>Medium</input>
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="large">Large</input>
+        <input type="radio" name="pizza-size" value="Large">Large</input>
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="extra large">Extra Large</input>
+        <input type="radio" name="pizza-size" value="Extra Large">Extra Large</input>
       </label>
     </form>
     <h3>Select pizza toppings:</h3>
@@ -42,20 +42,15 @@
     <p>Toppings: None</p>
     <h4>Total: $0.00</h4>
     <script>
-      document.querySelector('input[value="small"]').addEventListener('change',function(){
+      document.querySelector('input[value="Small"]').addEventListener('change',function(){
         document.getElementById('size').textContent = "Size: Small"
       })
-      document.querySelector('input[value="medium"]').addEventListener('change',function(){
-        document.getElementById('size').textContent = "Size: Medium"
-      })
-      document.querySelector('input[value="large"]').addEventListener('change',function(){
-        document.getElementById('size').textContent = "Size: Large"
-      })
-      document.querySelector('input[value="extra large"]').addEventListener('change',function(){
-        document.getElementById('size').textContent = "Size: Extra Large"
-      })
-      function size(){
-        
+      const allRadioButtons = document.querySelecterAll('input[name="pizza-size"]')
+      const sizeDisplayTag = document.getElementById('size');
+      allRadioButtons.forEach(radio => {
+        radio.addEventListener('change',() => {
+          sizeTag.textContent = "Size: "+radio.value;
+        }
       }
     </script>
   </body>
