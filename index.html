@@ -8,19 +8,19 @@
     <h3>Select a pizza size:</h3>
     <form>
       <label>
-        <input type="radio" name="pizza-size" value="Small">Small
+        <input type="radio" name="pizza-size" value="Small:8">Small
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="Medium" checked>Medium
+        <input type="radio" name="pizza-size" value="Medium:10" checked>Medium
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="Large">Large
+        <input type="radio" name="pizza-size" value="Large:12">Large
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="Extra Large">Extra Large
+        <input type="radio" name="pizza-size" value="Extra Large:14">Extra Large
       </label>
     </form>
     <h3>Select pizza toppings:</h3>
@@ -46,9 +46,9 @@
       const sizeDisplayTag = document.getElementById('size');
       allRadioButtons.forEach(radio => {
         radio.addEventListener('change',() => {
-          sizeDisplayTag.textContent = "Size: "+radio.value;
-        }
-      }
+          sizeDisplayTag.texContent = "Size: "+radio.value.split(":")[0]
+        })
+      })
     </script>
   </body>
 </html>
