@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ordering</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+
   <body>
-    <h1>Welcome to ordering</h1>
-    <h3>Select a pizza size:</h3>
+    <h1>Piiiiiiiizzzzzza inc.</h1>
+    <h2>Choose Your Size...</h2>
     <form>
       <label>
-        <input type="radio" name="pizza-size" value="Small">Small
+        <input type="radio" name="size" value="small:10"> Small
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="Medium" checked>Medium
+        <input type="radio" name="size" value="medium:12" checked> Medium
       </label>
       <br>
       <label>
-        <input type="radio" name="pizza-size" value="Large">Large
+        <input type="radio" name="size" value="large:15"> Large
       </label>
       <br>
-      <label>
-        <input type="radio" name="pizza-size" value="Extra Large">Extra Large
-      </label>
-    </form>
-    <h3>Select pizza toppings:</h3>
+    <h2>Choose Your Toppings...</h2>
     <form>
       <label>
-        <input type="checkbox" name="toppings" value="salami">Salami</input>
+        <input type="checkbox" name="topping" value="mushroom"> Mushrooms
       </label>
       <br>
       <label>
-        <input type="checkbox" name="toppings" value="pineapple">Pineapple</input>
-      </label>
-      <br>
+        <input type="checkbox" name="topping" value="olives"> Olives
+      </label><br>
       <label>
-        <input type="checkbox" name="toppings" value="mushroom">Mushrooms</input>
-      </label>
+        <input type="checkbox" name="topping" value="grilledonions"> Grilled Onions
+      </label><br>
     </form>
-    <h2>Your order details:</h2>
-    <p id="size">Size: Medium</p>
-    <p>Toppings: None</p>
-    <h4>Total: $0.00</h4>
+    <p id = "size"> Size Selected: </p>
+    <p id = "price"> Total Price: </p>
     <script>
-      const allRadioButtons = document.querySelectorAll('input[name="pizza-size"]')
-      const sizeDisplayTag = document.getElementById('size');
-      allRadioButtons.forEach(radio => {
-        radio.addEventListener('change',() => {
-          sizeDisplayTag.texContent = "Size: "+radio.value
+      const allRadioButtons = document.querySelectorAll('input[name = "size"]');
+      const sizeTag = document.getElementById("size");
+      const priceTag = document.getElementById("price")
+      allRadioButtons.forEach(radio =>{
+        radio.addEventListener('change',() =>{
+          sizeTag.textContent = "Size: "+ radio.value.split(":")[0];
+          priceTag.textContent = "Total Price: $"+ radio.value.split(":")[1];
         })
       })
     </script>
