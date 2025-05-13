@@ -27,7 +27,7 @@
       </label>
       <br>
     <h2>Please choose your pizza toppings</h2>
-    <form>
+    <form onchange="TPC()">
       <label>
         <input type="checkbox" name="topping" value="mushroom"> Mushrooms
       </label>
@@ -40,17 +40,27 @@
       </label><br>
     </form>
     <p id = "size"> Size Selected: Medium</p>
+    <p id = "toppings"> Toppings Selected: None</p>
     <p id = "price"> Total Price: </p>
     <script>
       const allRadioButtons = document.querySelectorAll('input[name = "size"]');
       const sizeTag = document.getElementById("size");
       const priceTag = document.getElementById("price")
+      const toppingPrice = 1.50
+      const toppingDisplay = document.getElementById("toppings")
+      const checkboxes = document.querySelectorAll('input[name="topping"]')
       allRadioButtons.forEach(radio =>{
         radio.addEventListener('change',() =>{
           sizeTag.textContent = "Size Selected: "+ radio.value.split(":")[0];
           priceTag.textContent = "Total Price: $"+ radio.value.split(":")[1];
         })
       })
+      function TPC(){
+        let toppingTotal = 0
+        checkboxes.forEach(checkbox => {
+          if (checkbox.checked){
+            toppingTotal += toppingPrice;}});
+            toppingDisplay.textContent = "Toppings Price $"+toppingTotal;
     </script>
   </body>
 </html>
